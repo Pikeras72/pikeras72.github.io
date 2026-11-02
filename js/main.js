@@ -413,8 +413,8 @@ const HITOS = [
               en: ["2022", "I build my first Discord bot, <strong>Emporium</strong>."] }],
   [2023.30, { es: ["2023", "Nace <strong>LegofyNet</strong> en la asignatura de Métodos Generativos."],
               en: ["2023", "<strong>LegofyNet</strong> is born in the Generative Methods course."] }],
-  [2023.58, { es: ["verano de 2023", "<strong>Summer School en la TU de Múnich</strong>: IoT industrial y un proyecto para Kärcher."],
-              en: ["summer 2023", "<strong>Summer School at TU Munich</strong>: industrial IoT and a project for Kärcher."] }],
+  [2023.58, { es: ["verano de 2023", "<strong>Summer School en la TU de Múnich</strong>: IoT industrial y un <a href='https://www.linkedin.com/posts/diego-ruiz-piqueras-ingeniero-de-software_emprendimientos-experiencias-desarrolloprofesional-share-7093563518448209922-5eWF/' target='_blank' rel='noopener noreferrer'>proyecto para Kärcher</a>."],
+              en: ["summer 2023", "<strong>Summer School at TU Munich</strong>: industrial IoT and a <a href='https://www.linkedin.com/posts/diego-ruiz-piqueras-ingeniero-de-software_emprendimientos-experiencias-desarrolloprofesional-share-7093563518448209922-5eWF/' target='_blank' rel='noopener noreferrer'>project for Kärcher</a>."] }],
   [2023.72, { es: ["2023 – 2025", "<strong>Mentor</strong> de estudiantes nuevos e internacionales en la ETSISI."],
               en: ["2023 – 2025", "<strong>Mentor</strong> to new and international students at ETSISI."] }],
   [2024.45, { es: ["2024", "<strong>Ganamos el BeTech Hackathon Madrid</strong> con un algoritmo para optimizar la carga de camiones eléctricos."],
@@ -451,6 +451,7 @@ function mostrarHito(i, direccion = 1, forzar = false) {
   const [fecha, texto] = textos[idioma];
   $("#cinta-fecha").textContent = fecha;
   const t = $("#cinta-texto"); t.innerHTML = texto;
+  $$("a", t).forEach(marcarPestanaNueva);
   t.className = "cinta-texto entra" + (direccion < 0 ? " izq" : "");
   void t.offsetWidth;
   $("#cinta-anio").textContent = a >= 2026.9 ? fecha : Math.floor(a);

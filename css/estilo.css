@@ -346,8 +346,8 @@ mark.subrayado { background: linear-gradient(transparent 58%, var(--amarillo) 58
 .tarjeta p { margin: 0; }
 .ahora-verbo { font: italic 800 2rem var(--serif); color: var(--rojo); margin-bottom: 6px !important; }
 .premios { list-style: none; padding: 0; margin: 44px 0 0; display: grid; gap: 8px; font-size: 1rem; }
-.premios li { padding: 8px 0; border-bottom: 1.5px dashed var(--punto); }
-.premios span { display: inline-block; width: 1.6em; color: var(--rojo); }
+.premios li { display: flex; align-items: baseline; gap: .5em; padding: 8px 0; border-bottom: 1.5px dashed var(--punto); }
+.premios .estrella { flex: none; color: var(--rojo); }
 
 /* ------------------------------------------------------ contacto */
 .contacto { text-align: center; padding-top: 150px !important; padding-bottom: 110px !important; }
@@ -424,4 +424,12 @@ mark.subrayado { background: linear-gradient(transparent 58%, var(--amarillo) 58
 @keyframes cae { to { transform: translateY(115vh) rotate(var(--giro)); } }
 @media (max-width: 400px) {
   .barra nav a:nth-child(2) { display: none; }
+}
+.premios .premio { flex: 1; }
+.premios .fuentes { flex: none; display: flex; gap: 12px; font-family: var(--mono); font-size: .8rem; white-space: nowrap; }
+.premios .fuentes a { color: var(--tinta-suave); text-decoration: none; }
+.premios .fuentes a:hover { color: var(--rojo); text-decoration: underline; }
+@media (max-width: 560px) {
+  .premios li { flex-wrap: wrap; }
+  .premios .fuentes { flex-basis: 100%; padding-left: 1.4em; }
 }
