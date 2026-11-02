@@ -8,6 +8,9 @@ Web estática, sin librerías ni paso de compilación: `index.html`, `css/estilo
 El idioma por defecto es el inglés; `?lang=es` abre la versión en español.
 GitHub Pages la publica tal cual desde la rama `main`.
 
+Si cambias `css/` o `js/`, sube también el `?v=` de sus enlaces en `index.html`:
+así ningún navegador mezcla el HTML nuevo con un CSS viejo que tenga guardado.
+
 ## Probarla en local
 
 ```bash
